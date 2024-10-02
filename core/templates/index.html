@@ -1,33 +1,44 @@
 {% extends 'base.html' %}
-{% block title %} 暫時的首頁 {% endblock %}
-{% block content %}
-<html>
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link href="../../static/css/index.css" rel="stylesheet">
-   </head>
-   <body>
-        <div class="index_container">
-            <h2 class="index_title">Newest Items</h2>
-            <div class="grid_container">
-                  {% for item in items %}
-                     <div>
-                        <a href="#">
-                           <div>
-                               <img src="{{item.image.url}}"
-                               class="item_img">
-                           </div>
-                           <div class="img_titles">
-                               <h2 style="font-size: 1.5rem;">{{item.name}}</h2>
-                               <p style="color:darkgray">Price：
-                                 {{item.price}}</p>
-                           </div>
-                        </a>
-                     </div>
+{% block title %} 首頁 {% endblock %}
+{% block content%}
+      <div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl">
+            <h2 class="mb-12 text-2xl text-center">Newest Items</h2>
+            <div class="grid grid-cols-3 gap-3">
+                  {% for item in items%}
+                        <div>
+                              <!-- 這裡的 item 是對應 item app 中 urls.py 裡面的 app_name  -->
+                              <a href="{% url 'item:detail' item.id %}"
+                               >
+                                    <div style="height:80%">
+                                          <img src="{{item.image.url}}"
+                                          style="border-radius: 10px;
+                                          height:100%"
+                                          >
+                                    </div>
+                                    <div class="p-6 bg-white rounded-b-xl">
+                                          <h2 class="text-2xl">{{item.name}}</h2>
+                                          <p class="text-gray-500">Price：{{item.price}}</p>
+                                    </div>
+                              </a>
+                        </div>
                   {% endfor %}
             </div>
-        </div>
-   </body>
-</html>
+      </div>
+      <div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl">
+            <h2 class="mb-12 text-2xl text-center">Category</h2>
+            <div class="grid grid-cols-3 gap-3">
+              {% for category in categories %}
+                  <div>
+                        <a href="#">
+                              <div class="p-6 bg-white rounded-b-xl">
+                                    <h2 class="text-2xl">{{category.name}}</h2>
+                                    <!-- category.items 返回與該Category實例關聯的Items的QuerySet。
+                                    count 方法計算該QuerySet中項目的數量，並將結果顯示在模板中。 -->
+                                    <p class="text-gray-500">{{ category.items.count }} Items</p>
+                              </div>
+                        </a>
+                  </div>
+              {% endfor %}
+            </div>
+      </div>
 {% endblock %}
