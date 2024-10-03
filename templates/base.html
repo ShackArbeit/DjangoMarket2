@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="../static/css/base.css"> 
     <title>{% block title %}{% endblock %} | Shack Market</title>
 <style>
     
@@ -19,7 +19,7 @@
              <!-- 區分是否有註冊及登入 -->
              {% if request.user.is_authenticated %}
              <a href="#" class="px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700">Inbox</a>
-             <a href="#" class="px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-gray-700">Dashboard</a>
+             <a href="{% url 'dashboard:index' %}"  class="px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-gray-700">我的商品列表</a>
              {% else %}
              <a href="{% url 'core:signup' %}" class="px-6 py-3 text-lg font-semibold
              bg-teal-500 text-white rounded-xl hover:bg-teal-700

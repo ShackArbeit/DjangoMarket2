@@ -26,8 +26,14 @@ def new(request):
     else:
         form = NewItemForm()
 
-    return render(request, 'item/form.html', {
+    return render(request, './ItemForm.html', {
         'form': form,
-        'title': 'New item',
+        'title': '新增新產品',
     })
 
+
+@login_required
+def delete(request,pk):
+    item=get_object_or_404(Items,pk=pk,created_by=request.user)
+    item.delete()
+    return redirect('dashboard:index')
