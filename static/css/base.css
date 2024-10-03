@@ -10,7 +10,6 @@
 }
 .nav_items {
       display: flex;
-      border:1px solid red;
 }
   
 .nav_items > * + * {
