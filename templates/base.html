@@ -16,7 +16,7 @@
         <div class="nav_items">
              <a href="#" class="nav_items_link">New Items</a>
              <a href="#" class="nav_items_link">Browse</a>
-             <a href="#" class="nav_items_link_spec">Sign Up</a>
+             <a href="{% url 'core:signup' %}"  class="nav_items_link_spec">Sign Up</a>
              <a href="#" class="nav_items_link_spec2">LogIn</a>
         </div>
     </nav>
@@ -36,7 +36,7 @@
                     <a href="#" class="footer_menu">About</a>
                 </li>
                 <li >
-                    <a href="{% url 'contact' %}" class="footer_menu">Contact</a>
+                    <a href="{% url 'core:contact' %}" class="footer_menu">Contact</a>
                 </li>
                 <li>
                     <a href="#" class="footer_menu">Privacy Policy</a>
