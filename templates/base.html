@@ -15,7 +15,7 @@
         <a class="nav_link">Shack Market</a>
         <div class="nav_items">
              <a href="{% url 'item:new' %}" class="nav_items_link">新增產品</a>
-             <a href="#" class="nav_items_link">Browse</a>
+             <a href="{% url 'item:items' %}" class="nav_items_link">Browse</a>
              <!-- 區分是否有註冊及登入 -->
              {% if request.user.is_authenticated %}
              <a href="#" class="px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700">Inbox</a>
