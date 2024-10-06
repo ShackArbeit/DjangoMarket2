@@ -4,16 +4,47 @@
 
 {% block content %}
 
-<h1 class="mb-6 text-3xl">{{ title }}</h1>
+<div class="text-center mb-5">
+<h1 class="text-4xl ">{{ title }}</h1>
+</div>
 
 <form method="post" action="." enctype="multipart/form-data">
     {% csrf_token %}
-    <div class="space-y-4">
-        {{ form.as_p }}
+    <div class="space-y-4  w-1/2 m-auto">
+            <!-- Category Field -->
+    <div class="mb-4">
+        <label for="id_category" class="block text-lg font-semibold mb-2">產品種類：</label>
+        {{ form.category }}
+    </div>
+
+    <!-- Name Field -->
+    <div class="mb-4">
+        <label for="id_name" class="block text-lg font-semibold mb-2">產品名稱：</label>
+        {{ form.name }}
+    </div>
+
+    <!-- Description Field -->
+    <div class="mb-4">
+        <label for="id_description" class="block text-lg font-semibold mb-2">產品敘述：</label>
+        {{ form.description }}
+    </div>
+
+    <!-- Image Field -->
+    <div class="mb-4">
+        <label for="id_image" class="block text-lg font-semibold mb-2">產品圖片：</label>
+        {{ form.image }}
+    </div>
+
+    <!-- Price Field -->
+    <div class="mb-4">
+        <label for="id_price" class="block text-lg font-semibold mb-2">產品價位：</label>
+        {{ form.price }}
+    </div>
+        <!-- {{ form.as_p }} -->
     </div>
 
     {% if form.errors or form.non_field_errors %}
-        <div class="mb-3 p-6 bg-red-100 rounded-xl">
+        <div class="mb-3 p-6 bg-red-100 rounded-xl ">
             {% for field in form %}
                 {{ field.errors }}
             {% endfor %}
@@ -21,6 +52,9 @@
         </div>
     {% endif %}
 
-    <button class="mt-6 py-4 px-8 text-lg bg-teal-500 hover:bg-teal-700 rounded-xl text-white">新增</button>
+    <div class="flex justify-center mt-6  ">
+    <button class="   
+    py-4 px-8 text-lg bg-teal-500 hover:bg-teal-700 rounded-xl text-white">新增</button>
+</div>
 </form>
 {% endblock %}

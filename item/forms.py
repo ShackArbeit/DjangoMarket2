@@ -1,7 +1,7 @@
 from django import forms
 from .models import Items
 
-INPUT_CLASS='w-full py-4 px-6 rounded-xl border'
+INPUT_CLASS='w-full py-4 px-6 rounded-xl border-2 border-purple-900'
 
 # 新增產品的 Form 表單
 class NewItemForm(forms.ModelForm):
