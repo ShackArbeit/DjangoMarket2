@@ -48,8 +48,11 @@
     font-weight: 700;
 }
 .nav_items_link:hover{
-      color:red;
-}
+    background-color:chartreuse
+} 
+.nav_items_link2:hover{
+    background-color:#d8fa45
+} 
 .nav_items_link_spec{
       padding:10px 20px;
       font-size: 20px;
@@ -87,7 +90,7 @@
     margin-bottom: 1.25rem;  
     font-weight: 600;         
     color: #cbd5e0;
-    font-size:30px;           
+    font-size:40px;           
   }
   .footer_p{
       font-size: 1.125rem;  
@@ -96,11 +99,13 @@
   }
   .footer_right{
       width:33.333%;
-
+      text-align: center;
   }
   .footer_menu{
-      font-size: 1.125rem;  
-    color: #14b8a6; 
+      font-size: 25px;  
+      color: #14b8a6; 
+      margin-top:3px;
+      margin-bottom:3px;
   }
   .footer_menu:hover{
       color: #0f766e;
@@ -143,16 +148,16 @@
             <h3 href="#" class="footer_about">Menu</h3>
             <ul class="pace-y-2">
                 <li >
-                    <a href="#" class="footer_menu">About</a>
+                    <a href="#" class="footer_menu">關於我們</a>
                 </li>
                 <li >
-                    <a href="{% url 'core:contact' %}" class="footer_menu">Contact</a>
+                    <a href="{% url 'core:contact' %}" class="footer_menu">聯繫我們</a>
                 </li>
                 <li>
-                    <a href="#" class="footer_menu">Privacy Policy</a>
+                    <a href="#" class="footer_menu">隱私聲明</a>
                 </li>
                 <li >
-                    <a href="#" class="footer_menu">Terms Of Uses</a>
+                    <a href="#" class="footer_menu">使用說明</a>
                 </li>
             </ul>
         </div>
