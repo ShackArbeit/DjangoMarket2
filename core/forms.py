@@ -27,10 +27,10 @@ class SignupForm(UserCreationForm):
 
 class LoginForm(AuthenticationForm):
        username = forms.CharField(widget=forms.TextInput(attrs={
-        'placeholder': 'Your username',
+        'placeholder': '您的用戶名稱',
         'class': 'w-full py-4 px-6 rounded-xl'
        }))
        password = forms.CharField(widget=forms.PasswordInput(attrs={
-        'placeholder': 'Your password',
+        'placeholder': '您的密碼',
         'class': 'w-full py-4 px-6 rounded-xl'
        }))
